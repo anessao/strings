@@ -1,35 +1,47 @@
-// var userInput = document.getElementById("letter-input");
-// var results = document.getElementById('results');
-// var submitButton = document.getElementbyId('submit');
-
-
+var submitButton = document.getElementById('submit');
+var userInput = document.getElementById("letter-input");
 
 function reversal(x) {
 	var string = x.split('').reverse().join('');
-	console.log(string);
+	return string;
 }
 
 function alphabits(x) {
 	var string = x.split('').sort().join('');
-	console.log(string);
+	return string;
 }
 
 function palindrome(x) {
 	var string = x.split('').reverse().join('');
 	if (x === string) {
-		console.log("Your string is a palindrome!")
+		return "Your string is a palindrome!";
 	} else {
-		console.log("Your string is not a palindrome!");
+		return "Your string is not a palindrome!";
 	}
 }
 
-var testString = "aba";
-reversal(testString);
-alphabits(testString);
-palindrome(testString);
+submitButton.addEventListener("click", function (){
+	var userInput = document.getElementById("letter-input").value;
+	var results = document.getElementById('results');
+	
+	var reversedInput = reversal(userInput);
+	var alphabitsInput = alphabits(userInput);
+	var palindromeInput = palindrome(userInput);
+
+	if (userInput === '') {
+		results.innerHTML = "Please enter some letters";
+	} else {
+		results.innerHTML = "<div><span>" + reversedInput + "</span></div>" + "<div><span>" + alphabitsInput + "</span></div>" + "<div><span>" + palindromeInput + "</span></div>";
+	}
+
+});
+
+
+userInput.addEventListener("keydown", function(e){
+	if(e.keyCode === 13) {
+         submitButton.click();
+   }
+});
 
 
 
-// submitButton.addEventListener("click", function myKeyPress(){
-
-// };
