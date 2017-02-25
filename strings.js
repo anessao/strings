@@ -31,7 +31,7 @@ submitButton.addEventListener("click", function (){
 	if (userInput === '') {
 		results.innerHTML = "Please enter some letters";
 	} else {
-		results.innerHTML = "<div><span>" + reversedInput + "</span></div>" + "<div><span>" + alphabitsInput + "</span></div>" + "<div><span>" + palindromeInput + "</span></div>";
+		results.innerHTML = "<div><span>Your letters reversed are: " + reversedInput + "</span></div>" + "<div><span>Your letters alphabetized are: " + alphabitsInput + "</span></div>" + "<div><span>" + palindromeInput + "</span></div>";
 	}
 
 });
